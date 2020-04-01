@@ -14,6 +14,8 @@ namespace Electrolitos
 
             while (estado == true)
             {
+                Console.WriteLine("******ELECTROLITOS*********");
+
                 Empleado emple = new Empleado();
 
                 Console.WriteLine("ingrese nombre de trabajador : " + "\n");

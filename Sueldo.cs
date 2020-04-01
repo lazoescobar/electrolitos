@@ -31,10 +31,12 @@ namespace Electrolitos
 
                 //montoCancelar 'agregacion' horas normales
                 montoaCancelar += horasNormales * valorHora;
+
                 saldoHorasNormales += horasNormales * valorHora;
 
                //montoCancelar 'agregacion' horas extras
                 montoaCancelar += horasExtra * valorHoraExtra;
+
                 saldoHorasExtras += horasExtra * valorHoraExtra;
             }
             else
