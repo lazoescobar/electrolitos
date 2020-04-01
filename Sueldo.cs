@@ -18,6 +18,9 @@ namespace Electrolitos
             int horasNormales = 0;
             int horasExtra = 0;
 
+            int saldoHorasNormales = 0;
+            int saldoHorasExtras = 0;
+
             if (horasTrabajadas > 40)
             {
                 //obtengo las horas extras
@@ -28,9 +31,11 @@ namespace Electrolitos
 
                 //montoCancelar 'agregacion' horas normales
                 montoaCancelar += horasNormales * valorHora;
+                saldoHorasNormales += horasNormales * valorHora;
 
-                //montoCancelar 'agregacion' horas extras
+               //montoCancelar 'agregacion' horas extras
                 montoaCancelar += horasExtra * valorHoraExtra;
+                saldoHorasExtras += horasExtra * valorHoraExtra;
             }
             else
             {
@@ -38,16 +43,18 @@ namespace Electrolitos
 
                 montoaCancelar = horasNormales * valorHora;
 
+                saldoHorasNormales += horasNormales * valorHora;
+
             }
 
-            this.mostrarDetalle(horasNormales, horasExtra, montoaCancelar);
+            this.mostrarDetalle(horasNormales, horasExtra, saldoHorasNormales, saldoHorasExtras, montoaCancelar);
             
         } 
 
-        private void mostrarDetalle(int horasNormales, int horasExtras, int Saldo)
+        private void mostrarDetalle(int horasNormales, int horasExtras, int saldoHoraNormal, int saldoHoraExtra, int Saldo)
         {
-            Console.WriteLine("HORAS NORMALES :" + horasNormales);
-            Console.WriteLine("HORAS EXTRAS : " + horasExtras);
+            Console.WriteLine("HORAS NORMALES :" + horasNormales + "    $ : " + saldoHoraNormal);
+            Console.WriteLine("HORAS EXTRAS : " + horasExtras + "   $ : " + saldoHoraExtra);
             Console.WriteLine("\n" + "su sueldo es de : " + Saldo);
 
         }
