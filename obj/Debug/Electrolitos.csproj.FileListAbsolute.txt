@@ -1,0 +1,7 @@
+C:\Users\Lazo\source\repos\Electrolitos\Electrolitos\bin\Debug\Electrolitos.exe.config
+C:\Users\Lazo\source\repos\Electrolitos\Electrolitos\bin\Debug\Electrolitos.exe
+C:\Users\Lazo\source\repos\Electrolitos\Electrolitos\bin\Debug\Electrolitos.pdb
+C:\Users\Lazo\source\repos\Electrolitos\Electrolitos\obj\Debug\Electrolitos.csprojAssemblyReference.cache
+C:\Users\Lazo\source\repos\Electrolitos\Electrolitos\obj\Debug\Electrolitos.csproj.CoreCompileInputs.cache
+C:\Users\Lazo\source\repos\Electrolitos\Electrolitos\obj\Debug\Electrolitos.exe
+C:\Users\Lazo\source\repos\Electrolitos\Electrolitos\obj\Debug\Electrolitos.pdb
