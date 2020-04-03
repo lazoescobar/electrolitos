@@ -21,7 +21,13 @@ namespace Electrolitos
                 Console.WriteLine("ingrese nombre de trabajador : " + "\n");
                 emple.Nombre = Console.ReadLine();
 
-                Console.WriteLine("\n" + "ingrese tipo de trabajador : " + "\n");
+                Console.WriteLine(".................TIPOS DE TRABJADORES ............." + "\n\n" +
+
+                                  "  *   Jefe de tienda(Puede escribir tambien : jefe tienda o jefe)" + " \n" + 
+                                  "  *   Vendedor de tienda(Puede escribir tambien : Vendedor tienda o vendedor)" + "\n" +
+                                  "  *   Reponedor de tienda(Puede escribir tambien : Reponedor tienda o reponedor)" + "\n\n" +
+                                  "Ingrese tipo de trabajador" + " \n"  );
+                 
                 string tipo = Console.ReadLine();
 
                 Console.WriteLine("\n" + "ingrese numero de horas trabajadas : " + "\n");
@@ -36,7 +42,7 @@ namespace Electrolitos
 
                 if (opcion == "SI")
                 {
-                    estado = true;
+                    //estado = true;
                     Console.Clear();
                 }
                 else if( opcion == "NO")
