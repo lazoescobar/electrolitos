@@ -11,9 +11,42 @@ namespace Electrolitos
         private int montoaCancelar = 0;
         public int horasTrabajadas;
 
-        public void calcularPago(int horas, int valorHora, int valorHoraExtra)
+        public void setHorasTrabajadas(int horas)
         {
             this.horasTrabajadas = horas;
+        }
+
+        public int getHorasTrabajadas()
+        {
+            return this.horasTrabajadas;
+        }
+
+        public void cancelarSegunTipo(Empleado emple) {
+
+            int tipo = emple.getTipo();
+
+            //JEFE
+            if(tipo == 1)
+            {
+                this.calcularPago(2000, 3000);
+            }
+
+            //VENDEDOR
+            else if(tipo == 2)
+            {
+                this.calcularPago(1500, 2500);
+            }
+
+            //REPONEDOR
+            else if(tipo == 3)
+            {
+                this.calcularPago(1000, 1500);
+            }
+        }
+
+        public void calcularPago(int valorHora, int valorHoraExtra)
+        {
+            //this.horasTrabajadas = horas;
 
             int horasNormales = 0;
             int horasExtra = 0;
@@ -34,7 +67,7 @@ namespace Electrolitos
 
                 saldoHorasNormales += horasNormales * valorHora;
 
-               //montoCancelar 'agregacion' horas extras
+                //montoCancelar 'agregacion' horas extras
                 montoaCancelar += horasExtra * valorHoraExtra;
 
                 saldoHorasExtras += horasExtra * valorHoraExtra;
@@ -50,16 +83,20 @@ namespace Electrolitos
             }
 
             this.mostrarDetalle(horasNormales, horasExtra, saldoHorasNormales, saldoHorasExtras, montoaCancelar);
-            
-        } 
+
+        }
 
         private void mostrarDetalle(int horasNormales, int horasExtras, int saldoHoraNormal, int saldoHoraExtra, int Saldo)
         {
             Console.WriteLine("HORAS NORMALES :" + horasNormales + "    $ : " + saldoHoraNormal);
             Console.WriteLine("HORAS EXTRAS : " + horasExtras + "   $ : " + saldoHoraExtra);
-            Console.WriteLine("\n" + "su sueldo es de : " + Saldo);
+            Console.WriteLine("\n" + "TOTAL A CANCELAR : " + Saldo);
 
         }
 
+        
+
     }
+
+    
 }
