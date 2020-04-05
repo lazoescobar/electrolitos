@@ -13,10 +13,10 @@ namespace Electrolitos
 
             bool resultado = false;
 
-            //EXPRESION PUEDE SOMETERSE A UNOS REQUIRIMIENTOS
+            //EXPRESION PUEDE SOMETERSE A NUEVOS REQUIRIMIENTOS
             Regex expresion = new Regex("^[A-Z|a-z]*$");
 
-            if(expresion.IsMatch(nombre) == true){
+            if( expresion.IsMatch ( nombre ) == true ) {
 
                 resultado = true;
             }
@@ -24,14 +24,13 @@ namespace Electrolitos
             return resultado;
         }
 
-        public bool EsOpcion(String opcion){
+        public bool EsOpcion(String opcion) {
 
             bool resultado = false;
 
             Regex expresion = new Regex("^[1-3]$");
 
-            if (expresion.IsMatch(opcion) == true)
-            {
+            if( expresion.IsMatch ( opcion ) == true ) {
 
                 resultado = true;
             }
@@ -45,8 +44,7 @@ namespace Electrolitos
 
             Regex expresion = new Regex("^([1-9][0-9]*)$");
 
-            if (expresion.IsMatch(horas) == true)
-            {
+            if( expresion.IsMatch ( horas ) == true ) {
 
                 resultado = true;
             }

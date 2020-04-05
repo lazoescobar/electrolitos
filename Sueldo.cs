@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace Electrolitos
 {
-    class Sueldo
-    {
-        private int montoaCancelar = 0;
-        public int horasTrabajadas;
+    class Sueldo {
 
-        public void setHorasTrabajadas(int horas)
-        {
+        private int montoaCancelar = 0;
+        private int horasTrabajadas = 0;
+
+        public void setHorasTrabajadas(int horas) {
+
             this.horasTrabajadas = horas;
         }
 
-        public int getHorasTrabajadas()
-        {
+        public int getHorasTrabajadas() {
+
             return this.horasTrabajadas;
         }
 
@@ -26,27 +26,29 @@ namespace Electrolitos
             int tipo = emple.getTipo();
 
             //JEFE
-            if(tipo == 1)
-            {
+            if(tipo == 1) {
+
+                //Valor hora Normal y hora extra            JEFE DE TIENDA
                 this.calcularPago(2000, 3000);
             }
 
             //VENDEDOR
-            else if(tipo == 2)
-            {
+            else if(tipo == 2) {
+
+                //Valor hora Normal y hora extra            VENDEDOR DE TIENDA
                 this.calcularPago(1500, 2500);
             }
 
             //REPONEDOR
-            else if(tipo == 3)
-            {
+            else if(tipo == 3) {
+
+                //Valor hora Normal y hora extra            REPONEDOR DE TIENDA
                 this.calcularPago(1000, 1500);
             }
+
         }
 
-        public void calcularPago(int valorHora, int valorHoraExtra)
-        {
-            //this.horasTrabajadas = horas;
+        private void calcularPago(int valorHora, int valorHoraExtra) {
 
             int horasNormales = 0;
             int horasExtra = 0;
@@ -54,8 +56,8 @@ namespace Electrolitos
             int saldoHorasNormales = 0;
             int saldoHorasExtras = 0;
 
-            if (horasTrabajadas > 40)
-            {
+            if (horasTrabajadas > 40){
+
                 //obtengo las horas extras
                 horasExtra += horasTrabajadas - 40;
 
@@ -72,8 +74,9 @@ namespace Electrolitos
 
                 saldoHorasExtras += horasExtra * valorHoraExtra;
             }
-            else
-            {
+
+            else {
+
                 horasNormales = horasTrabajadas;
 
                 montoaCancelar = horasNormales * valorHora;
@@ -86,17 +89,14 @@ namespace Electrolitos
 
         }
 
-        private void mostrarDetalle(int horasNormales, int horasExtras, int saldoHoraNormal, int saldoHoraExtra, int Saldo)
-        {
+        private void mostrarDetalle(int horasNormales, int horasExtras, int saldoHoraNormal, int saldoHoraExtra, int Saldo) {
+
             Console.WriteLine("HORAS NORMALES :" + horasNormales + "    $ : " + saldoHoraNormal);
             Console.WriteLine("HORAS EXTRAS : " + horasExtras + "   $ : " + saldoHoraExtra);
             Console.WriteLine("\n" + "TOTAL A CANCELAR : " + Saldo);
 
         }
 
-        
-
     }
-
-    
+ 
 }

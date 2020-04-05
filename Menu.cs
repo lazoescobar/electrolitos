@@ -8,9 +8,9 @@ namespace Electrolitos
 {
     class Menu
     {
-        Validacion vali;
+        private Validacion vali;
 
-        public string solicitarNombre(){
+        public string solicitarNombre() {
 
             vali = new Validacion();
 
@@ -22,13 +22,13 @@ namespace Electrolitos
 
                 nombre = Console.ReadLine();
 
-                if(vali.EsNombre(nombre) == false){
+                if( vali.EsNombre( nombre ) == false ) {
 
                     Console.Clear();
                     Console.WriteLine("Error...... nombre invalido " + "\n");
                 }
 
-            } while (vali.EsNombre(nombre) == false);
+            } while ( vali.EsNombre( nombre ) == false );
 
             Console.WriteLine();
 
@@ -36,14 +36,13 @@ namespace Electrolitos
         }
 
 
-        public int solicitarCargo(Empleado emple)
-        {
+        public int solicitarCargo ( Empleado emple ) {
 
             vali = new Validacion();
             String Opcion;
 
-            do
-            {
+            do {
+
                 Console.WriteLine("Eliga un cargo Porfavor : " + "\n" +
                                   "-------- TIPOS DE CARGOS ------------" + "\n" +
                                   "(1) JEFE DE TIENDA " + "\n" + 
@@ -53,8 +52,7 @@ namespace Electrolitos
 
                 Opcion = Console.ReadLine();
 
-                if (vali.EsOpcion(Opcion) == false)
-                {
+                if ( vali.EsOpcion( Opcion ) == false ) {
 
                     Console.Clear();
 
@@ -63,51 +61,54 @@ namespace Electrolitos
                     Console.WriteLine("Error......Opcion invalida " + "\n");
 
                 }
-                else
-                {
+
+                else {
+
                     Console.Clear();
 
                     Console.WriteLine("Nombre Empleado : " + emple.getNombre() + "\n");
                 }
 
-            } while (vali.EsOpcion(Opcion) == false);
+            } while ( vali.EsOpcion( Opcion ) == false );
 
             Console.WriteLine();
 
-            int opc = Convert.ToInt32(Opcion);
+            int opc = Convert.ToInt32( Opcion );
 
             return opc;
 
         }
 
-        public int solicitarhorasTrabajadas( Empleado emple)
-        {
+
+        public int solicitarhorasTrabajadas ( Empleado emple) {
+
             vali = new Validacion();
 
             String ingresoHoras;
 
-            do
-            {
+            do {
+
                 Console.WriteLine("Ingrese cantidad de horas trabajadas por Sr(a) :" + emple.getNombre() + "\n" );
 
                 ingresoHoras = Console.ReadLine();
 
-                if(vali.EsHorasTrabajdas(ingresoHoras) == false)
-                {
+                if( vali.EsHorasTrabajdas ( ingresoHoras ) == false ) {
+
                     Console.Clear();
 
                     Console.WriteLine("Nombre Empleado : " + emple.getNombre() + "\n\n" );
 
                     Console.WriteLine("Error......horas invalidas " + "\n");
                 }
-                else
-                {
+
+                else {
+
                     Console.Clear();
 
                     Console.WriteLine("Nombre Empleado : " + emple.getNombre() + "\n");
                 }
 
-            } while (vali.EsHorasTrabajdas(ingresoHoras) == false);
+            } while ( vali.EsHorasTrabajdas ( ingresoHoras ) == false );
 
             Console.WriteLine();
 
@@ -116,13 +117,14 @@ namespace Electrolitos
             return horas;
         }
 
-        public String solicitarFinPrograma()
-        {
+
+        public String solicitarFinPrograma() {
+
             String respuesta;
 
             Console.WriteLine();
 
-            Console.WriteLine("Dese calcular un nuevo empleado : Si/no");
+            Console.WriteLine("Dese calcular un nuevo empleado : si / no");
 
             respuesta = Console.ReadLine();
 
@@ -130,5 +132,7 @@ namespace Electrolitos
 
             return respuesta.ToUpper();
         }
+
     }
+
 }
